@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="History"
+        android:id="@+id/textView11"
+        android:textSize="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sound city"
+        android:id="@+id/soundcity"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/textView11"
+        android:layout_alignStart="@+id/thebetrayar"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="the betrayar"
+        android:id="@+id/thebetrayar"
+        android:layout_below="@+id/soundcity"
+        android:layout_alignEnd="@+id/textView11"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nanking"
+        android:id="@+id/nanking"
+        android:layout_below="@+id/thebetrayar"
+        android:layout_alignStart="@+id/thebetrayar"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="the face of war"
+        android:id="@+id/thefaceofwar"
+        android:layout_below="@+id/nanking"
+        android:layout_alignStart="@+id/nanking"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nuremberg"
+        android:id="@+id/nuremberg"
+        android:layout_below="@+id/thefaceofwar"
+        android:layout_alignStart="@+id/thefaceofwar"
+        android:checked="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:id="@+id/back3"
+        android:layout_below="@+id/nuremberg"
+        android:layout_toStartOf="@+id/nuremberg"
+        android:layout_marginTop="43dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="buy"
+        android:id="@+id/buy"
+        android:layout_alignTop="@+id/back3"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:id="@+id/next3"
+        android:layout_alignTop="@+id/buy"
+        android:layout_toEndOf="@+id/nanking" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to basket"
+        android:id="@+id/tobasket"
+        android:layout_below="@+id/back3"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

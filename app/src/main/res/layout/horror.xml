@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Horror"
+        android:id="@+id/textView10"
+        android:textSize="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dracula"
+        android:id="@+id/dracula"
+        android:layout_marginTop="47dp"
+        android:checked="false"
+        android:layout_below="@+id/textView10"
+        android:layout_alignStart="@+id/textView10" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="the birds"
+        android:id="@+id/thebirds"
+        android:checked="false"
+        android:layout_below="@+id/dracula"
+        android:layout_alignStart="@+id/dracula" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="drag me to hell"
+        android:id="@+id/dragmetohell"
+        android:layout_below="@+id/thebirds"
+        android:layout_alignStart="@+id/thebirds"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="halloween"
+        android:id="@+id/halloween"
+        android:checked="false"
+        android:layout_below="@+id/dragmetohell"
+        android:layout_alignStart="@+id/dragmetohell" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scream"
+        android:id="@+id/scream"
+        android:layout_below="@+id/halloween"
+        android:layout_alignStart="@+id/halloween"
+        android:checked="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:id="@+id/back2"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/scream"
+        android:layout_toStartOf="@+id/buy" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="buy"
+        android:id="@+id/buy"
+        android:layout_alignTop="@+id/back2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:id="@+id/next2"
+        android:layout_alignTop="@+id/buy"
+        android:layout_toEndOf="@+id/buy" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to basket"
+        android:id="@+id/tobasket"
+        android:layout_below="@+id/back2"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Action"
+        android:id="@+id/textView8"
+        android:textSize="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Batman"
+        android:id="@+id/batman"
+        android:checked="false"
+        android:layout_below="@+id/textView8"
+        android:layout_alignStart="@+id/killbill"
+        android:layout_marginTop="41dp" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Killbill"
+        android:id="@+id/killbill"
+        android:checked="false"
+        android:layout_below="@+id/batman"
+        android:layout_alignStart="@+id/superman" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Superman"
+        android:id="@+id/superman"
+        android:checked="false"
+        android:layout_below="@+id/killbill"
+        android:layout_alignStart="@+id/jamesbond" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spiderman"
+        android:id="@+id/spiderman"
+        android:checked="false"
+        android:layout_below="@+id/superman"
+        android:layout_alignStart="@+id/superman" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jamesbond"
+        android:id="@+id/jamesbond"
+        android:checked="false"
+        android:layout_below="@+id/spiderman"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:id="@+id/back1"
+        android:layout_marginTop="73dp"
+        android:layout_below="@+id/jamesbond"
+        android:layout_toStartOf="@+id/buy" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="buy"
+        android:id="@+id/buy"
+        android:layout_alignTop="@+id/back1"
+        android:layout_alignEnd="@+id/textView8" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:id="@+id/next1"
+        android:layout_alignTop="@+id/buy"
+        android:layout_toEndOf="@+id/buy" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to basket"
+        android:id="@+id/button6"
+        android:layout_below="@+id/buy"
+        android:layout_alignStart="@+id/buy" />
+
+</RelativeLayout>
