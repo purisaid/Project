@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/"
     android:weightSum="1">
 
     <TextView
@@ -23,7 +22,8 @@
         android:id="@+id/action"
         android:layout_below="@+id/textView6"
         android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="36dp" />
+        android:layout_marginTop="36dp"
+        android:onClick="buttonClicked" />
 
     <Button
         android:layout_width="wrap_content"
@@ -31,7 +31,8 @@
         android:text="Comedy"
         android:id="@+id/comedy"
         android:layout_below="@+id/action"
-        android:layout_alignStart="@+id/action" />
+        android:layout_alignStart="@+id/action"
+        android:onClick="buttonClicked" />
 
     <Button
         android:layout_width="wrap_content"
@@ -39,7 +40,8 @@
         android:text="Horror"
         android:id="@+id/horror"
         android:layout_below="@+id/comedy"
-        android:layout_alignStart="@+id/comedy" />
+        android:layout_alignStart="@+id/comedy"
+        android:onClick="buttonClicked" />
 
     <Button
         android:layout_width="wrap_content"
@@ -47,34 +49,7 @@
         android:text="History"
         android:id="@+id/history"
         android:layout_below="@+id/horror"
-        android:layout_alignStart="@+id/horror" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buy"
-        android:id="@+id/buy"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/textView6" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:id="@+id/totalcost"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/history"
-        android:layout_alignTop="@+id/buy" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Item is already choosen"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/history"
-        android:layout_alignStart="@+id/history"
-        android:layout_marginTop="42dp" />
+        android:layout_alignStart="@+id/horror"
+        android:onClick="buttonClicked" />
 
 </RelativeLayout>

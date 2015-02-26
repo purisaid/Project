@@ -13,83 +13,68 @@
         android:layout_centerHorizontal="true"
         android:textSize="40dp" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="tootsie"
-        android:id="@+id/tootsie"
-        android:layout_marginTop="59dp"
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/rg"
+        android:focusableInTouchMode="true"
         android:layout_below="@+id/textView9"
-        android:layout_alignStart="@+id/romanholiday"
-        android:checked="false" />
+        android:layout_alignStart="@+id/textView9">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Roman Holiday"
-        android:id="@+id/romanholiday"
-        android:layout_below="@+id/tootsie"
-        android:layout_alignEnd="@+id/textView9"
-        android:checked="false" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tootsie"
+            android:id="@+id/tootsie"
+            android:layout_marginTop="59dp"
+            android:layout_below="@+id/textView9"
+            android:layout_alignStart="@+id/romanholiday"
+            android:checked="false" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The player"
-        android:id="@+id/theplayer"
-        android:layout_below="@+id/romanholiday"
-        android:layout_alignStart="@+id/tootsie"
-        android:checked="false" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="election"
+            android:id="@+id/election"
+            android:checked="false"
+            android:layout_below="@+id/boray"
+            android:layout_alignStart="@+id/boray" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="borat"
-        android:id="@+id/boray"
-        android:layout_below="@+id/theplayer"
-        android:layout_alignStart="@+id/theplayer"
-        android:checked="false" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="borat"
+            android:id="@+id/boray"
+            android:layout_below="@+id/theplayer"
+            android:layout_alignStart="@+id/theplayer"
+            android:checked="false" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="election"
-        android:id="@+id/election"
-        android:checked="false"
-        android:layout_below="@+id/boray"
-        android:layout_alignStart="@+id/boray" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The player"
+            android:id="@+id/theplayer"
+            android:layout_below="@+id/romanholiday"
+            android:layout_alignStart="@+id/tootsie"
+            android:checked="false" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:id="@+id/back"
-        android:layout_marginTop="59dp"
-        android:layout_below="@+id/election"
-        android:layout_toStartOf="@+id/election" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roman Holiday"
+            android:id="@+id/romanholiday"
+            android:layout_below="@+id/tootsie"
+            android:layout_alignEnd="@+id/textView9"
+            android:checked="false" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/next"
-        android:layout_alignTop="@+id/button4"
-        android:layout_toEndOf="@+id/button4"
-        android:text="next" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="buy"
-        android:id="@+id/button4"
-        android:layout_alignTop="@+id/back"
-        android:layout_toEndOf="@+id/back" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="to basket"
-        android:id="@+id/tobasket"
-        android:layout_below="@+id/back"
-        android:layout_toStartOf="@+id/next" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buy"
+            android:id="@+id/buy"
+            android:layout_below="@+id/election"
+            android:layout_alignEnd="@+id/theplayer"
+            android:onClick="buyClicked" />
+    </RadioGroup>
 
 </RelativeLayout>

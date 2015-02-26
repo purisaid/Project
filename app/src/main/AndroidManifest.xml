@@ -17,8 +17,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddCourseActivity"
+            android:name=".action"
             android:label="@string/title_activity_add_course" >
+        </activity>
+        <activity
+            android:name=".comady"
+            android:label="" >
+        </activity>
+        <activity
+            android:name=".history"
+            android:label="" >
+        </activity>
+        <activity
+            android:name=".horror"
+            android:label="" >
         </activity>
         <activity
             android:name=".ListCourseActivity"

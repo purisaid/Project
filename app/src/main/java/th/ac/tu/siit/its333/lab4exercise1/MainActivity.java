@@ -10,10 +10,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements
+        AdapterView.OnItemClickListener ,
+        AdapterView.OnItemLongClickListener{
+
+    SimpleCursorAdapter adapter;
 
     CourseDBHelper helper;
 
@@ -22,30 +30,34 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        loadit();
+
+    }
+
+    public void loadit(){
+
+        helper = new CourseDBHelper(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT _id,grade FROM course;",null);
+
+        adapter = new SimpleCursorAdapter(this,
+                android.R.layout.simple_list_item_1,
+                cursor,
+                new String[] {"grade"},
+                new int[] {android.R.id.text1,android.R.id.text2},
+                0);
+
+
+        ListView lv = (ListView)findViewById(R.id.listView);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(this);
+        lv.setOnItemLongClickListener(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-        // This method is called when this activity is put foreground.
-        helper = new CourseDBHelper(this.getApplicationContext());
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT SUM(credit) cr, SUM(value*credit) gp FROM course", null);
-        cursor.moveToFirst();
-        double credit = cursor.getDouble(0); // credit
-        double grade = cursor.getDouble(1); //  grade
-
-        TextView tvGP = (TextView)findViewById(R.id.tvGP);
-        tvGP.setText(String.format("%.2f", grade));
-        TextView tvCR = (TextView)findViewById(R.id.tvCR);
-        tvCR.setText(String.valueOf(credit));
-        TextView tvGPA = (TextView)findViewById(R.id.tvGPA);
-
-        double GPA =  grade / credit;
-        if (credit == 0 ) {GPA = 0; }
-        tvGPA.setText(String.format("%.2f",GPA));
-
+        loadit();
     }
 
 
@@ -55,14 +67,15 @@ public class MainActivity extends ActionBarActivity {
 
         switch(id) {
             case R.id.btAdd:
-                i = new Intent(this, AddCourseActivity.class);
+                i = new Intent(this, ListCourseActivity.class);
                 startActivityForResult(i, 88);
                 break;
 
-            case R.id.btShow:
-                i = new Intent(this, ListCourseActivity.class);
-                startActivity(i);
-                break;
+
+
+
+
+
 
             case R.id.btReset:
                 SQLiteDatabase db = helper.getWritableDatabase();
@@ -75,27 +88,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 88) {
-            if (resultCode == RESULT_OK) {
-                String code = data.getStringExtra("code");
-                int credit = data.getIntExtra("credit", 0);
-                String grade = data.getStringExtra("grade");
 
-                helper = new CourseDBHelper(this.getApplicationContext());
-                SQLiteDatabase db = helper.getWritableDatabase();
-                ContentValues r = new ContentValues();
-
-                r.put("code",code);
-                r.put("grade",grade);
-                r.put("credit",credit);
-                r.put("value",gradeToValue(grade.toString()));
-                long new_id = db.insert("course",null,r);
-
-
-            }
-        }
-
-        Log.d("course", "onActivityResult");
     }
 
     double gradeToValue(String g) {
@@ -138,4 +131,40 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view,
+                            int position, long id) {
+        Log.d("course", id + " is clicked");
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                   int position, long id) {
+
+        //helper = new CourseDBHelper(this);
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        int n = db.delete("course",
+                "_id = ?",
+                new String[]{Long.toString(id)});
+
+        if (n == 1) {
+            Toast t = Toast.makeText(this.getApplicationContext(),
+                    "Successfully deleted the selected item.",
+                    Toast.LENGTH_SHORT);
+            t.show();
+
+            // retrieve a new collection of records
+            Cursor cursor = db.rawQuery(
+                    "SELECT _id,grade FROM course;",
+                    null);
+
+            // update the adapter
+            adapter.changeCursor(cursor);
+        }
+        db.close();
+        return true;
+    }
+
+
 }
