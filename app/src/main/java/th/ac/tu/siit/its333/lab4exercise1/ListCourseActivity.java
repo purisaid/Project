@@ -62,11 +62,13 @@ public class ListCourseActivity extends ActionBarActivity {
             if (resultCode == RESULT_OK) {
 
                 String grade = data.getStringExtra("grade");
+                int price = data.getIntExtra("price",0);
                 helper = new CourseDBHelper(this.getApplicationContext());
                 SQLiteDatabase db = helper.getWritableDatabase();
                 ContentValues r = new ContentValues();
 
                 r.put("grade", grade);
+                r.put("price", price);
                 r.put("value", 0.0);
                 long newId = db.insert("course", null, r);
 

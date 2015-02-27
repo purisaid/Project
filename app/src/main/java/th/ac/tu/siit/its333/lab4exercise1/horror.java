@@ -34,7 +34,10 @@ public class horror extends ActionBarActivity {
 
         int rID = rg.getCheckedRadioButtonId();
         String grade = ((RadioButton)findViewById(rID)).getText().toString();
+        int price = 100;
         result.putExtra("grade", grade);
+        result.putExtra("price", price);
+
         this.setResult(RESULT_OK, result);
         this.finish();
     }

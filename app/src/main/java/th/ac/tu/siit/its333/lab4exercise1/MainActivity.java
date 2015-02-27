@@ -38,12 +38,12 @@ public class MainActivity extends ActionBarActivity implements
 
         helper = new CourseDBHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT _id,grade FROM course;",null);
+        Cursor cursor = db.rawQuery("SELECT _id,grade,price FROM course;",null);
 
         adapter = new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_1,
+                android.R.layout.simple_list_item_2,
                 cursor,
-                new String[] {"grade"},
+                new String[] {"grade","price"},
                 new int[] {android.R.id.text1,android.R.id.text2},
                 0);
 
@@ -156,7 +156,7 @@ public class MainActivity extends ActionBarActivity implements
 
             // retrieve a new collection of records
             Cursor cursor = db.rawQuery(
-                    "SELECT _id,grade FROM course;",
+                    "SELECT _id,grade,price FROM course;",
                     null);
 
             // update the adapter

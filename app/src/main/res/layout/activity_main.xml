@@ -32,5 +32,13 @@
         android:choiceMode="singleChoice"
         android:layout_above="@+id/btAdd" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total cost"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/listView"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

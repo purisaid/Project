@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class CourseDBHelper extends SQLiteOpenHelper {
 
     private static final String name = "courses.sqlite3";
-    private static final int version = 3;
+    private static final int version = 4;
 
 
     public CourseDBHelper(Context ctx) {
@@ -19,6 +19,7 @@ public class CourseDBHelper extends SQLiteOpenHelper {
         String sql = "CREATE TABLE course (" +
                 "_id integer primary key autoincrement," +         // credit
                 "grade text not null," +            // letter grade e.g. A, B+
+                "price int default 0," +            // letter grade e.g. A, B+
                 "value real default 0.0);";         // grade value e.g. 4, 3.5
         db.execSQL(sql);
     }

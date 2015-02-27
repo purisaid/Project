@@ -34,7 +34,10 @@ public class history extends ActionBarActivity {
 
         int rID = rg2.getCheckedRadioButtonId();
         String grade = ((RadioButton)findViewById(rID)).getText().toString();
+        int price = 300;
         result.putExtra("grade", grade);
+      result.putExtra("price", price);
+
         this.setResult(RESULT_OK, result);
         this.finish();
     }
