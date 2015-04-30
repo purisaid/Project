@@ -21,52 +21,6 @@
         android:focusableInTouchMode="true"
         android:id="@+id/rg">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="sound city"
-            android:id="@+id/soundcity"
-            android:layout_marginTop="59dp"
-            android:layout_below="@+id/textView11"
-            android:layout_alignStart="@+id/thebetrayar"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="the betrayar"
-            android:id="@+id/thebetrayar"
-            android:layout_below="@+id/soundcity"
-            android:layout_alignEnd="@+id/textView11"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nanking"
-            android:id="@+id/nanking"
-            android:layout_below="@+id/thebetrayar"
-            android:layout_alignStart="@+id/thebetrayar"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="the face of war"
-            android:id="@+id/thefaceofwar"
-            android:layout_below="@+id/nanking"
-            android:layout_alignStart="@+id/nanking"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nuremberg"
-            android:id="@+id/nuremberg"
-            android:layout_below="@+id/thefaceofwar"
-            android:layout_alignStart="@+id/thefaceofwar"
-            android:checked="false" />
-
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="108dp"
@@ -76,5 +30,15 @@
             android:onClick="buyClicked" />
 
     </RadioGroup>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="63dp"
+        android:spinnerMode="dropdown" />
 
 </RelativeLayout>

@@ -72,6 +72,8 @@ public class ListCourseActivity extends ActionBarActivity {
                 r.put("value", 0.0);
                 long newId = db.insert("course", null, r);
 
+
+
                 if (newId != -1) {
                     Toast t = Toast.makeText(this.getApplicationContext(),
                             "Successfully added",

@@ -18,54 +18,9 @@
         android:layout_height="fill_parent"
         android:id="@+id/rg"
         android:focusableInTouchMode="true"
+        android:layout_marginTop="101dp"
         android:layout_below="@+id/textView9"
-        android:layout_alignStart="@+id/textView9">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="tootsie"
-            android:id="@+id/tootsie"
-            android:layout_marginTop="59dp"
-            android:layout_below="@+id/textView9"
-            android:layout_alignStart="@+id/romanholiday"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="election"
-            android:id="@+id/election"
-            android:checked="false"
-            android:layout_below="@+id/boray"
-            android:layout_alignStart="@+id/boray" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="borat"
-            android:id="@+id/boray"
-            android:layout_below="@+id/theplayer"
-            android:layout_alignStart="@+id/theplayer"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The player"
-            android:id="@+id/theplayer"
-            android:layout_below="@+id/romanholiday"
-            android:layout_alignStart="@+id/tootsie"
-            android:checked="false" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Roman Holiday"
-            android:id="@+id/romanholiday"
-            android:layout_below="@+id/tootsie"
-            android:layout_alignEnd="@+id/textView9"
-            android:checked="false" />
+        android:layout_alignParentStart="true">
 
         <Button
             android:layout_width="wrap_content"
@@ -76,5 +31,16 @@
             android:layout_alignEnd="@+id/theplayer"
             android:onClick="buyClicked" />
     </RadioGroup>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_below="@+id/textView9"
+        android:layout_toStartOf="@+id/textView9"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:focusableInTouchMode="false"
+        android:spinnerMode="dropdown" />
 
 </RelativeLayout>

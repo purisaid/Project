@@ -16,56 +16,10 @@
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/killbill"
-        android:layout_below="@+id/textView8"
         android:layout_alignStart="@+id/textView8"
         android:focusableInTouchMode="true"
-        android:id="@+id/rg">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jamesbond  "
-            android:id="@+id/jamesbond"
-            android:checked="true"
-            android:layout_below="@+id/spiderman"
-            android:layout_centerHorizontal="true" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Killbill"
-            android:id="@+id/killbill"
-            android:checked="false"
-            android:layout_below="@+id/batman"
-            android:layout_alignStart="@+id/superman" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Superman"
-            android:id="@+id/superman"
-            android:checked="false"
-            android:layout_below="@+id/killbill"
-            android:layout_alignStart="@+id/jamesbond" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Spiderman"
-            android:id="@+id/spiderman"
-            android:checked="false"
-            android:layout_below="@+id/superman"
-            android:layout_alignStart="@+id/superman" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Batman"
-            android:id="@+id/batman"
-            android:checked="false"
-            android:layout_below="@+id/textView8"
-            android:layout_alignStart="@+id/killbill" />
+        android:id="@+id/rg"
+        android:layout_below="@+id/spinner">
 
         <Button
             android:layout_width="wrap_content"
@@ -75,6 +29,25 @@
             android:layout_alignEnd="@+id/textView8"
             android:layout_below="@+id/jamesbond"
             android:onClick="buyClicked" />
+
     </RadioGroup>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true"
+        android:text="Sel"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/selection"
+        android:layout_above="@+id/rg"
+        android:layout_alignStart="@+id/rg" />
 
 </RelativeLayout>

@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        int cost = 0;
         loadit();
 
     }
@@ -52,6 +52,8 @@ public class MainActivity extends ActionBarActivity implements
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
+
+       //String r1 = cursor.getString(cursor.getColumnIndex(CourseDBHelper.price));
     }
 
     @Override
@@ -143,7 +145,7 @@ public class MainActivity extends ActionBarActivity implements
 
         //helper = new CourseDBHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
-
+        int cost;
         int n = db.delete("course",
                 "_id = ?",
                 new String[]{Long.toString(id)});
@@ -162,6 +164,9 @@ public class MainActivity extends ActionBarActivity implements
             // update the adapter
             adapter.changeCursor(cursor);
         }
+
+
+
         db.close();
         return true;
     }
