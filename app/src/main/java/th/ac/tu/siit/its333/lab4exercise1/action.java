@@ -18,7 +18,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -34,49 +33,30 @@ import java.net.URL;
 import java.util.ArrayList;
 
 
-public class action extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class action extends ActionBarActivity {
     ArrayList<String>cat = new ArrayList<String>();
     String valToSet;
     Spinner spinner;
-    TextView selection;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.action);
-
-
-        selection=(TextView)findViewById(R.id.selection);
-
-        Spinner spin=(Spinner)findViewById(R.id.spinner);
-        spin.setOnItemSelectedListener(this);
-
-        ArrayAdapter<String> aa=new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,
-                cat);
-
-        aa.setDropDownViewResource(
-                android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(aa);
-
         LoadMessageTask l = new LoadMessageTask();
         l.execute();
-    }
 
-    public void onItemSelected(AdapterView<?> parent,
-                               View v, int position, long id) {
-        selection.setText(cat.get(position));
-        Log.e("fsda",cat.get(position));
-    }
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,cat);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
 
-    public void onNothingSelected(AdapterView<?> parent) {
-        selection.setText("");
-    }
+        spinner =  (Spinner)findViewById(R.id.spinner);
 
+    }
 
     public void buyClicked(View v) {
 
         RadioGroup rg = (RadioGroup)findViewById(R.id.rg);
+        valToSet= spinner.getSelectedItem().toString();
 
 /*
         Intent result = new Intent();
